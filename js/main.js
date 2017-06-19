@@ -116,7 +116,7 @@
 			tx: 0,
 			ty: -100,
 			fill: {
-				color: '#fff',
+				color: '#ddd',
 				duration: 500,
 				easing: 'linear'
 			},
@@ -140,7 +140,7 @@
 			tx: 0,
 			ty: 100,
 			fill: {
-				color: '#fff',
+				color: '#aaa',
 				duration: 500,
 				easing: 'linear'
 			},
@@ -164,7 +164,7 @@
 			tx: 0,
 			ty: 0,
 			fill: {
-				color: '#fff',
+				color: '#333',
 				duration: 500,
 				easing: 'linear'
 			},
@@ -188,7 +188,7 @@
 			tx: 0,
 			ty: 0,
 			fill: {
-				color: '#fff',
+				color: '#f5f',
 				duration: 500,
 				easing: 'linear'
 			},
@@ -212,7 +212,7 @@
 			tx: 0,
 			ty: 0,
 			fill: {
-				color: '#fff',
+				color: '#1af',
 				duration: 500,
 				easing: 'linear'
 			},
@@ -236,7 +236,7 @@
 			tx: 0,
 			ty: 0,
 			fill: {
-				color: '#fff',
+				color: '#51f',
 				duration: 500,
 				easing: 'linear'
 			},
