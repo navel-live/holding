@@ -13,10 +13,10 @@ var accuracy = 20;
 var opts = {
   image: 'coming.svg',
   gravity: 860,
-  friction: 0.99,
+  friction: 1,
   bounce: 2,
-  pointsX: 50,
-  pointsY: 65,
+  pointsX: 15,
+  pointsY: 28,
   renderCloth: false,
   mouseInfluence: 175,
   pinCorners: true,
