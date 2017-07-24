@@ -6,19 +6,19 @@ console.clear();
 
 var mesh = undefined;
 var cloth = undefined;
-var spacingX = 20;
-var spacingY = 20;
-var accuracy = 20;
+var spacingX = 1;
+var spacingY = 1;
+var accuracy = 1;
 
 var opts = {
   image: 'coming.svg',
   gravity: 860,
   friction: 1,
-  bounce: 2,
-  pointsX: 15,
-  pointsY: 28,
+  bounce: 0.5,
+  pointsX: 6,
+  pointsY: 8,
   renderCloth: false,
-  mouseInfluence: 175,
+  mouseInfluence: 40,
   pinCorners: true,
   randomImage: function randomImage() {
     this.image = 'https://unsplash.it/400/400?image=' + Math.floor(Math.random() * 1100);
@@ -59,7 +59,7 @@ var mouse = {
   x: 0,
   y: 0,
   px: 0,
-  py: 1
+  py: 0
 };
 
 /*////////////////////////////////////////*/
@@ -344,6 +344,7 @@ function pointerMove(e) {
 function pointerDown(e) {
   mouse.down = true;
   mouse.button = 1;
+  console.log('pointer down');
   pointerMove(e);
 }
 
@@ -363,3 +364,42 @@ document.body.addEventListener('touchmove', pointerMove);
 document.body.addEventListener('mouseup', pointerUp);
 document.body.addEventListener('touchend', pointerUp);
 document.body.addEventListener('mouseleave', pointerUp);
+
+
+//TOUCH EVENTS
+
+
+(function(window){
+
+    // check for touch
+    if (Modernizr.touch) {
+
+        // run the forEach on each figure element
+        [].slice.call(document.querySelectorAll("figure")).forEach(function(el,i){
+
+            // check if the user moves a finger
+            var fingerMove = false;
+            el.addEventListener("touchmove",function(e){
+                e.stopPropagation();
+                fingerMove = true;
+            });
+
+            // always reset fingerMove to false on touch start
+            el.addEventListener("touchstart",function(e){
+                e.stopPropagation();
+                fingerMove = false;
+            });
+
+            // add hover class if figure touchend and fingerMove is false
+            el.addEventListener("touchend",function(e){
+                e.stopPropagation();
+                if (fingerMove == false) {
+                    classie.toggle(el,"hover");
+                }
+            });
+
+        });
+
+    }
+
+})(window);
